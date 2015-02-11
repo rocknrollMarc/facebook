@@ -1,46 +1,47 @@
  class User
      include DataMapper::Resource
-     property :id,         Serial
-     property :email,      String, length: 255
-     property :nickname,   String, length: 255
-     property :formatted_name, String, length: 255
-     property :sex, String, length: 6
-     property :relationship_status, String
-     property :provider,   String, length: 255
-     property :identifier, String, length: 255
-     property :photo_url,  String, length: 255
-     property :location, String, length: 255
-     property :description, String, length: 255
-     property :interests, Text
-     property :education, Text
-     has n, :relationships
-     has n, :followers, through: :relationships, class_name:
-   'User', child_key: [:user_id]
-     has n, :follows, through: :relationships, class_name: 'User',
-   remote_name: :user, child_key: [:follower_id]
-     has n, :statuses
+     property :id                  , Serial
+     property :email               , String , length: 255
+     property :nickname            , String , length: 255
+     property :formatted_name      , String , length: 255
+     property :sex                 , String , length: 6
+     property :relationship_status , String
+     property :provider            , String , length: 255
+     property :identifier          , String , length: 255
+     property :photo_url           , String , length: 255
+     property :location            , String , length: 255
+     property :description         , String , length: 255
+     property :interests           , Text
+     property :education           , Text
+
+     has n                         , :relationships
+     has n                         , :followers                       , through: :relationships , class_name:
+   'User'                          , child_key: [:user_id]
+     has n                         , :follows                         , through: :relationships , class_name: 'User' ,
+   remote_name: :user              , child_key: [:follower_id]
+     has n                         , :statuses
      belongs_to :wall
-     has n, :groups, through: Resource
-     has n, :sent_messages, class_name: 'Message', child_key:
+     has n                         , :groups                          , through: Resource
+     has n                         , :sent_messages                   , class_name: 'Message'   , child_key:
    [:user_id]
-     has n, :received_messages, class_name: 'Message', child_key:
+     has n                         , :received_messages               , class_name: 'Message'   , child_key:
    [:recipient_id]
-     has n, :confirms
-     has n, :confirmed_events, through: :confirms, class_name:
-   'Event', child_key: [:user_id], :date.gte => Date.today
-     has n, :pendings
-     has n, :pending_events, through: :pendings, class_name:
-   'Event', child_key: [:user_id], :date.gte => Date.today
-     has n, :requests
-     has n, :albums
-     has n, :photos, through: :albums
-     has n, :comments
-     has n, :activities
-     has n, :pages
-     validates_is_unique :nickname, message: "Someone else has taken
-   up this nickname, try something else!"
-     after :create, :create_s3_bucket
-     after :create, :create_wall
+     has n                         , :confirms
+     has n                         , :confirmed_events                , through: :confirms      , class_name:
+   'Event'                         , child_key: [:user_id]            , :date.gte => Date.today
+     has n                         , :pendings
+     has n                         , :pending_events                  , through: :pendings      , class_name:
+   'Event'                         , child_key: [:user_id]            , :date.gte => Date.today
+     has n                         , :requests
+     has n                         , :albums
+     has n                         , :photos                          , through: :albums
+     has n                         , :comments
+     has n                         , :activities
+     has n                         , :pages
+     validates_is_unique :nickname , message: "Someone else has taken
+   up this nickname                , try something else!"
+     after :create                 , :create_s3_bucket
+     after :create                 , :create_wall
 
     def add_friend(user)
       Relationship.create(user: user, follower: self)
