@@ -94,4 +94,14 @@
       end
       groups - self.groups
     end
+
+    def friend_groups
+      groups = []
+      friends.each do |friend|
+        groups += friend.groups
+      end
+      groups - self.groups
+    end
+
+
  end
