@@ -15,8 +15,7 @@
      property :education           , Text
 
      has n                         , :relationships
-     has n                         , :followers                       , through: :relationships , class_name:
-   'User'                          , child_key: [:user_id]
+     has n                         , :followers                       , through: :relationships , class_name: 'User'                          , child_key: [:user_id]
      has n                         , :follows                         , through: :relationships , class_name: 'User' ,
    remote_name: :user              , child_key: [:follower_id]
      has n                         , :statuses
@@ -88,12 +87,12 @@
     end
 
     def friend_events
-      events = []
-      friends.each do |friend|
-        groups += friend.groups
-      end
-      groups - self.groups
-    end
+     events = []
+     friends.each do |friend|
+       events += friend.confirmed_events
+     end
+     return events.sort {|x,y| y.time <=> x.time}
+   end
 
     def friend_groups
       groups = []
