@@ -1,0 +1,105 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AT_REGEXP	mention.rb	/^   AT_REGEXP = Regexp.new('@[\\w.@_-]+', Regexp::EXTENDED)$/;"	c
+Activity	activity.rb	/^class Activity$/;"	c
+Album	album.rb	/^class Album$/;"	c
+Annotation	annotation.rb	/^class Annotation$/;"	c
+Comment	comment.rb	/^class Comment$/;"	c
+Commentable	commentable.rb	/^module Commentable$/;"	m
+Confirm	confirm.rb	/^class Confirm$/;"	c
+Decline	decline.rb	/^class Decline$/;"	c
+Event	event.rb	/^class Event$/;"	c
+Group	group.rb	/^class Group$/;"	c
+Like	like.rb	/^class Like$/;"	c
+Mention	mention.rb	/^class Mention$/;"	c
+Message	message.rb	/^class Message$/;"	c
+Page	page.rb	/^class Page$/;"	c
+Pending	pending.rb	/^class Pending$/;"	c
+Photo	photo.rb	/^class Photo$/;"	c
+Post	post.rb	/^ class Post$/;"	c
+RPX_API_KEY	config.rb	/^RPX_API_KEY = '<RPX API KEY>'$/;"	c
+Relationship	relationship.rb	/^class Relationship$/;"	c
+Request	request.rb	/^class Request$/;"	c
+S3_CONFIG	config.rb	/^S3_CONFIG = {}$/;"	c
+Status	status.rb	/^class Status$/;"	c
+URL_REGEXP	mention.rb	/^  URL_REGEXP = Regexp.new('\\b ((https?|telnet|gopher|file|wais|ftp) :$/;"	c
+User	user.rb	/^ class User$/;"	c
+Wall	wall.rb	/^class Wall$/;"	c
+activity	comment.rb	/^     belongs_to :activity$/;"	f
+activity	like.rb	/^      belongs_to :activity$/;"	f
+add_activity	album.rb	/^  def add_activity$/;"	f	class:Album
+add_activity	annotation.rb	/^  def add_activity$/;"	f	class:Annotation
+add_activity	event.rb	/^     def add_activity$/;"	f	class:Event
+add_activity	group.rb	/^  def add_activity$/;"	f	class:Group
+add_activity	page.rb	/^  def add_activity$/;"	f	class:Page
+add_activity	photo.rb	/^  def add_activity$/;"	f	class:Photo.filename_display.filename_thumbnail
+add_activity	relationship.rb	/^  def add_activity$/;"	f	class:Relationship
+add_friend	user.rb	/^    def add_friend(user)$/;"	f	class:User
+album	photo.rb	/^  belongs_to :album$/;"	f
+all_events	user.rb	/^    def all_events$/;"	f	class:User
+approve	request.rb	/^  def approve$/;"	f	class:Request
+confirmed_user	confirm.rb	/^  belongs_to :confirmed_user, class_name: 'User', child_key: [:event_id]$/;"	f
+cover_photo	album.rb	/^  belongs_to :cover_photo, class_name: 'Photo', child_key: [:cover_photo_id]$/;"	f
+create_s3_bucket	user.rb	/^    def create_s3_bucket$/;"	f	class:User
+create_wall	event.rb	/^     def create_wall$/;"	f	class:Event
+create_wall	group.rb	/^  def create_wall$/;"	f	class:Group
+create_wall	user.rb	/^    def create_wall$/;"	f	class:User
+declined_user	decline.rb	/^  belongs_to :declined_user, class_name: 'Event', child_key: [:event_id]$/;"	f
+destroy_image_s3	photo.rb	/^  def destroy_image_s3$/;"	f	class:Photo.filename_display.filename_thumbnail
+event	page.rb	/^  belongs_to :event$/;"	f
+feed	user.rb	/^    def feed$/;"	f	class:User
+filename_display	photo.rb	/^  def filename_display; "#{id}.disp"; end$/;"	f	class:Photo
+filename_thumbnail	photo.rb	/^  def filename_thumbnail; "#{id}.thmb"; end$/;"	f	class:Photo.filename_display
+find	user.rb	/^    def self.find(identifier)$/;"	F	class:User
+follower	relationship.rb	/^  belongs_to :follower    , class_name: 'User'    , child_key: [ :follower_id]$/;"	f
+friend_events	user.rb	/^    def friend_events$/;"	f	class:User
+friend_groups	user.rb	/^    def friend_groups$/;"	f	class:User
+friends	user.rb	/^    def friends$/;"	f	class:User
+from	request.rb	/^  belongs_to :from, class_name: User, child_key: [:from_id]$/;"	f
+group	page.rb	/^  belongs_to :group$/;"	f
+next_in_album	photo.rb	/^  def next_in_album$/;"	f	class:Photo.filename_display.filename_thumbnail
+page	comment.rb	/^     belongs_to :page$/;"	f
+page	like.rb	/^      belongs_to :page$/;"	f
+pending_event	pending.rb	/^  belongs_to :pending_event, class_name: 'Event', child_key: [:event_id]$/;"	f
+pending_user	pending.rb	/^  belongs_to :pending_user, class_name: 'User', child_key: [:user_id]$/;"	f
+people_who_likes	commentable.rb	/^   def people_who_likes$/;"	f	class:Commentable
+photo	annotation.rb	/^  belongs_to :photo$/;"	f
+photo	comment.rb	/^     belongs_to :photo$/;"	f
+photo	like.rb	/^      belongs_to :photo$/;"	f
+possessive_pronoun	user.rb	/^    def possessive_pronoun$/;"	f	class:User
+post	comment.rb	/^     belongs_to :post$/;"	f
+post	like.rb	/^      belongs_to :post$/;"	f
+previous_in_album	photo.rb	/^  def previous_in_album$/;"	f	class:Photo.filename_display.filename_thumbnail
+process	status.rb	/^  def process$/;"	f	class:Status
+pronoun	user.rb	/^    def pronoun$/;"	f	class:User
+recipient	message.rb	/^  belongs_to :recipient, class_name: 'User', child_key: [:recipient_id]$/;"	f
+recipient	status.rb	/^  belongs_to :recipient, class_name: 'User', child_key: [:recipient_id]$/;"	f
+s3_bucket	photo.rb	/^  def s3_bucket$/;"	f	class:Photo.filename_display.filename_thumbnail
+s3_url_thumbnail	photo.rb	/^  def s3_url_thumbnail; S3.get_link(s3_bucket, filename_thumbnail, Time.now.to_i + (24*60*60)); end$/;"	f	class:Photo.filename_display.filename_thumbnail
+save_image_s3	photo.rb	/^  def save_image_s3$/;"	f	class:Photo.filename_display.filename_thumbnail
+sender	message.rb	/^  belongs_to :sender, class_name: 'User', child_key: [:user_id]$/;"	f
+starts_with?	status.rb	/^  def starts_with?(prefix)$/;"	f	class:Status
+status	comment.rb	/^     belongs_to :status$/;"	f
+status	like.rb	/^      belongs_to :status$/;"	f
+status	mention.rb	/^  belongs_to :status$/;"	f
+to_json	status.rb	/^  def to_json(*a)$/;"	f	class:Status
+url_thumbnail	photo.rb	/^  def url_thumbnail$/;"	f	class:Photo.filename_display.filename_thumbnail
+user	activity.rb	/^     belongs_to :user$/;"	f
+user	album.rb	/^  belongs_to :user$/;"	f
+user	comment.rb	/^     belongs_to :user$/;"	f
+user	event.rb	/^  belongs_to :user$/;"	f
+user	like.rb	/^      belongs_to :user$/;"	f
+user	mention.rb	/^  belongs_to :user$/;"	f
+user	page.rb	/^  belongs_to :user$/;"	f
+user	post.rb	/^     belongs_to :user$/;"	f
+user	relationship.rb	/^  belongs_to :user        , child_key: [:user_id]$/;"	f
+user	request.rb	/^  belongs_to :user$/;"	f
+user	status.rb	/^  belongs_to :user$/;"	f
+wall	event.rb	/^     belongs_to :wall$/;"	f
+wall	group.rb	/^  belongs_to :wall$/;"	f
+wall	post.rb	/^     belongs_to :wall$/;"	f
+wall	user.rb	/^     belongs_to :wall$/;"	f
